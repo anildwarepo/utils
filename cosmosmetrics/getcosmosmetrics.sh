@@ -75,6 +75,7 @@ az cosmosdb list --query "[?kind=='MongoDB'].{id:id, name:name, resourceGroup: r
                 az monitor metrics list --resource $id --metric $metricName --aggregation $metricAggretation \
                 --filter "CollectionName eq $QUOTE$collectionName$QUOTE" --start-time $startTime --end-time $endTime -o table > ./$folderName/$metricName-$metricAggretation-$fileName
 
+                echo "------------------------------------------"
             done
         done
 done
