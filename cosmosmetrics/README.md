@@ -23,6 +23,7 @@ Clone this repo
 
     git clone https://github.com/anildwarepo/utils
     cd utils/cosmosmetrics
+    chmod +x ./getcosmosmetrics.sh
     ./getcosmosmetrics.sh 2022-04-01T05:30:00Z 2022-04-02T07:40:00Z
 
 
