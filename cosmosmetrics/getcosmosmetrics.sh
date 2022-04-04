@@ -45,18 +45,24 @@ az cosmosdb list --query "[?kind=='MongoDB'].{id:id, name:name, resourceGroup: r
                 az monitor metrics list --resource $id --metric $metricName --aggregation $metricAggretation \
                 --filter "CollectionName eq $QUOTE$collectionName$QUOTE" --start-time $startTime --end-time $endTime -o table > ./$folderName/$metricName-$metricAggretation-$fileName
                 
-                metricName=TotalRequests
-                metricAggretation=Average
-                echo Collecting $metricName-$metricAggretation on collection $collectionName
-                az monitor metrics list --resource $id --metric $metricName --aggregation $metricAggretation \
-                --filter "CollectionName eq $QUOTE$collectionName$QUOTE" --start-time $startTime --end-time $endTime -o table > ./$folderName/$metricName-$metricAggretation-$fileName
-
                 metricName=MongoRequests
                 metricAggretation=Count
                 echo Collecting $metricName-$metricAggretation on collection $collectionName
                 az monitor metrics list --resource $id --metric $metricName --aggregation $metricAggretation \
                 --filter "CollectionName eq $QUOTE$collectionName$QUOTE" --start-time $startTime --end-time $endTime -o table > ./$folderName/$metricName-$metricAggretation-$fileName
 
+                metricName=TotalRequests
+                metricAggretation=Average
+                echo Collecting $metricName-$metricAggretation on collection $collectionName
+                az monitor metrics list --resource $id --metric $metricName --aggregation $metricAggretation \
+                --filter "CollectionName eq $QUOTE$collectionName$QUOTE" --start-time $startTime --end-time $endTime -o table > ./$folderName/$metricName-$metricAggretation-$fileName
+               
+                metricName=TotalRequests
+                metricAggretation=Count
+                echo Collecting $metricName-$metricAggretation on collection $collectionName
+                az monitor metrics list --resource $id --metric $metricName --aggregation $metricAggretation \
+                --filter "CollectionName eq $QUOTE$collectionName$QUOTE" --start-time $startTime --end-time $endTime -o table > ./$folderName/$metricName-$metricAggretation-$fileName
+                              
                 metricName=TotalRequestUnits
                 metricAggretation=Count
                 echo Collecting $metricName-$metricAggretation on collection $collectionName
@@ -68,8 +74,6 @@ az cosmosdb list --query "[?kind=='MongoDB'].{id:id, name:name, resourceGroup: r
                 echo Collecting $metricName-$metricAggretation on collection $collectionName
                 az monitor metrics list --resource $id --metric $metricName --aggregation $metricAggretation \
                 --filter "CollectionName eq $QUOTE$collectionName$QUOTE" --start-time $startTime --end-time $endTime -o table > ./$folderName/$metricName-$metricAggretation-$fileName
-                
-               
 
             done
         done
