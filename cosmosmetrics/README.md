@@ -3,11 +3,11 @@
 This script collects Cosmos DB metrics for Mongo API to help analyze resource utilization. 
 This below metrics are collected. 
 
-ProvisionedThroughput
-MongoRequests
-TotalRequests
-TotalRequestUnits
-NormalizedRUConsumption
+    ProvisionedThroughput
+    MongoRequests
+    TotalRequests
+    TotalRequestUnits
+    NormalizedRUConsumption
 
 You can find more details on the these metrics [over here](https://docs.microsoft.com/en-us/azure/cosmos-db/monitor-cosmos-db-reference)
 
